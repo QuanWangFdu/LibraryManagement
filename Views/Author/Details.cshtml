@@ -1,0 +1,27 @@
+@model LibraryManagement.Models.Author
+
+<h2>Get Author Details</h2>
+
+<form asp-action="Details" method="post">
+    <div class="form-group">
+        <label for="authorId">Author ID</label>
+        <input type="number" id="authorId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-info">Get Details</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h4>ID</h4>
+        <p>@Model.AuthorId</p>
+    </div>
+    <div>
+        <h4>Name</h4>
+        <p>@Model.Name</p>
+    </div>
+}
+
+<div>
+    <a href="@Url.Action("Index", "Author")" class="btn btn-secondary">Back to List</a>
+</div>

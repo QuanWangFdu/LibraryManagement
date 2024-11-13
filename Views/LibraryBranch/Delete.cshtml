@@ -1,0 +1,29 @@
+@model LibraryManagement.Models.LibraryBranch
+
+<h2>Delete LibraryBranch</h2>
+
+<form asp-action="Delete" method="post">
+    <div class="form-group">
+        <label for="librarybranchId">LibraryBranch ID</label>
+        <input type="number" id="librarybranchId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-danger">Delete LibraryBranch</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h4>ID</h4>
+        <p>@Model.LibraryBranchId</p>
+    </div>
+    <div>
+        <h4>Name</h4>
+        <p>@Model.BranchName</p>
+    </div>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="LibraryBranchId" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="@Url.Action("Index", "LibraryBranch")" class="btn btn-secondary">Back to List</a>
+    </form>
+}

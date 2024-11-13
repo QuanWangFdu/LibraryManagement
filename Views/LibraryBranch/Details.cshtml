@@ -1,0 +1,27 @@
+@model LibraryManagement.Models.LibraryBranch
+
+<h2>Get LibraryBranch Details</h2>
+
+<form asp-action="Details" method="post">
+    <div class="form-group">
+        <label for="librarybranchId">LibraryBranch ID</label>
+        <input type="number" id="librarybranchId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-info">Get Details</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h4>ID</h4>
+        <p>@Model.LibraryBranchId</p>
+    </div>
+    <div>
+        <h4>Name</h4>
+        <p>@Model.BranchName</p>
+    </div>
+}
+
+<div>
+    <a href="@Url.Action("Index", "LibraryBranch")" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,24 @@
+@model LibraryManagement.Models.LibraryBranch
+
+<h2>Edit LibraryBranch</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="librarybranchId">LibraryBranch ID</label>
+        <input type="number" id="librarybranchId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-warning">Edit LibraryBranch</button>
+</form>
+
+@if (Model != null)
+{
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="LibraryBranchId" />
+        <div class="form-group">
+            <label asp-for="BranchName"></label>
+            <textarea asp-for="BranchName" class="form-control"></textarea>
+            <span asp-validation-for="BranchName" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+}

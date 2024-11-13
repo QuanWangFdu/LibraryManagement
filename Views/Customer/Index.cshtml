@@ -1,0 +1,25 @@
+@model List<Customer>
+
+<h1>Customers</h1>
+<a href="@Url.Action("Create", "Customer")" class="btn btn-primary">Create Customer</a>
+<a href="@Url.Action("Details", "Customer")" class="btn btn-info">Get Customer Details</a>
+<a href="@Url.Action("EditForm", "Customer")" class="btn btn-warning">Edit Customer</a>
+<a href="@Url.Action("DeleteForm", "Customer")" class="btn btn-danger">Delete Customer</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@customer.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+@model List<Author>
+
+<h1>Authors</h1>
+<a href="@Url.Action("Create", "Author")" class="btn btn-primary">Create Author</a>
+<a href="@Url.Action("Details", "Author")" class="btn btn-info">Get Author Details</a>
+<a href="@Url.Action("EditForm", "Author")" class="btn btn-warning">Edit Author</a>
+<a href="@Url.Action("DeleteForm", "Author")" class="btn btn-danger">Delete Author</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.AuthorId</td>
+                <td>@author.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

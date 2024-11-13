@@ -1,0 +1,25 @@
+@model List<LibraryBranch>
+
+<h1>LibraryBranches</h1>
+<a href="@Url.Action("Create", "LibraryBranch")" class="btn btn-primary">Create LibraryBranch</a>
+<a href="@Url.Action("Details", "LibraryBranch")" class="btn btn-info">Get LibraryBranch Details</a>
+<a href="@Url.Action("EditForm", "LibraryBranch")" class="btn btn-warning">Edit LibraryBranch</a>
+<a href="@Url.Action("DeleteForm", "LibraryBranch")" class="btn btn-danger">Delete LibraryBranch</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.LibraryBranchId</td>
+                <td>@customer.BranchName</td>
+            </tr>
+        }
+    </tbody>
+</table>

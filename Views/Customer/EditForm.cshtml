@@ -1,0 +1,24 @@
+@model LibraryManagement.Models.Customer
+
+<h2>Edit Customer</h2>
+
+<form asp-action="EditForm" method="post">
+    <div class="form-group">
+        <label for="customerId">Customer ID</label>
+        <input type="number" id="customerId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-warning">Edit Customer</button>
+</form>
+
+@if (Model != null)
+{
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="CustomerId" />
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <textarea asp-for="Name" class="form-control"></textarea>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+}

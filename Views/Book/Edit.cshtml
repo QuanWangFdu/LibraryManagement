@@ -1,0 +1,34 @@
+@model LibraryManagement.Models.Book
+
+<h2>Edit Book</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="bookId">Book ID</label>
+        <input type="number" id="bookId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-warning">Edit Book</button>
+</form>
+
+@if (Model != null)
+{
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="BookId" />
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AuthorId"></label>
+            <input asp-for="AuthorId" class="form-control" />
+            <span asp-validation-for="AuthorId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LibraryBranchId"></label>
+            <input asp-for="LibraryBranchId" class="form-control" />
+            <span asp-validation-for="LibraryBranchId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+}

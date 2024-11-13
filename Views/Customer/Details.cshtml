@@ -1,0 +1,27 @@
+@model LibraryManagement.Models.Customer
+
+<h2>Get Customer Details</h2>
+
+<form asp-action="Details" method="post">
+    <div class="form-group">
+        <label for="customerId">Customer ID</label>
+        <input type="number" id="customerId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-info">Get Details</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h4>ID</h4>
+        <p>@Model.CustomerId</p>
+    </div>
+    <div>
+        <h4>Name</h4>
+        <p>@Model.Name</p>
+    </div>
+}
+
+<div>
+    <a href="@Url.Action("Index", "Customer")" class="btn btn-secondary">Back to List</a>
+</div>

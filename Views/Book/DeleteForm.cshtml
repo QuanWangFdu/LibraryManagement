@@ -1,0 +1,38 @@
+@model LibraryManagement.Models.Book
+
+<h2>Delete Book</h2>
+
+<form asp-action="DeleteForm" method="post">
+    <div class="form-group">
+        <label for="bookId">Book ID</label>
+        <input type="number" id="bookId" name="id" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-danger">Delete Book</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h4>ID</h4>
+        <p>@Model.BookId</p>
+    </div>
+    <div>
+        <h4>Title</h4>
+        <p>@Model.Title</p>
+    </div>
+    <div>
+        <h4>Author ID</h4>
+        <p>@Model.AuthorId</p>
+    </div>
+    <div>
+        <h4>Library Branch ID</h4>
+        <p>@Model.LibraryBranchId</p>
+    </div>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" name="BookId" value="@Model.BookId" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="@Url.Action("Index", "Book")" class="btn btn-secondary">Back to List</a>
+    </form>
+}
+
